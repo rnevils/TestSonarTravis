@@ -1,4 +1,11 @@
 language: java
 jdk:
 - oraclejdk8
-script: ant build
+addons:
+  sonarcloud:
+    organization: rnevils-github
+    token:
+      secure: "cr49a6x5m9hmAn7pUz7HO3x0/Megd4fYA5Kct/HveSt0NMJd1PwROFf2Yedy2NBk5TnCIhfemRlf2U6jEQ+6R7V29FtxSa14MTcFr1oKUSxNupdJ/vS/rUK6PeirPIOTNk/DCmMqRkn+O3LLWyGSLlgw8OjiHi87/QcaVH9dylnX47Z0O45KWPFvU2iMsQSaC3p04RbdHre8/i0cb0v99vClz69CkjR6FeJASi1kM3Xm4UYJq9JLmqxpBF7oSHihVUUTSjkNvS9TfPM+Qd5/CqNjgt+zSaRuWFyWSYg+fPPNQmE3EyHecvxNvTrcssb4CHHKSq16ahtbRwBH77K1EpGo72EQ8c7rql5WmyiDpS/bR+NQtHT/ygif4HI4mWodMP/u/GmvO6HC15oM3q4ydRHwitmyk1XB5Nao9p1rbUwXHAn5ImrMoyvCRzm8+BrSor+ybd+uYGZg6Hz4RwwUf1b1XEv0UTnvxREp1cQC21JjBoSitT2WAIIGzfYzOOufIT3N7CzekYQfByqTDgKSAxiL+MjoW1qNMZyC7YgiZNRfvBXM5XctB84jhGvS4zyMnoJaIYAPgkpyaxZI9s6DLhR5wvvkRNrx52ZqbMA8ACYLfrrOs3TL0fuQnADhQkTdASuVD9aCR6zIJNVbHD5zqJ0FyhZ4FkuJSQQEuu0w3x0="
+script:
+- ant build
+- sonar-scanner
